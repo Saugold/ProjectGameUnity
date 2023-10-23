@@ -68,6 +68,20 @@ public class EnemyPatrulheiro : MonoBehaviour
 				isRight = true;
 			}
 		}
+		else if(collider.gameObject.CompareTag("Damage"))
+		{
+			
+            if (isRight == false)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                isRight = true;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                isRight = false;
+            }
+        }
 	}
 	private void OnTriggerEnter2D(Collider2D collider)
 	{

@@ -25,8 +25,9 @@ public class PlayerDeath : MonoBehaviour
 	public void ShowGameOver()
 	{   
         playerRig.constraints = playerRig.constraints = RigidbodyConstraints2D.FreezePosition;
-		playerCol.isTrigger = true;
-		gameOver.SetActive(true);
+		playerCol.enabled = false;
+        
+        gameOver.SetActive(true);
         
 	}
     public void RestartGame(string lvlName)

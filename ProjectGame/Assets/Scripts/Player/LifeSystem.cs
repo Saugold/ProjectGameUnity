@@ -12,10 +12,12 @@ public class LifeSystem : MonoBehaviour
     public Sprite cheio;
     public Sprite vazio;
     public GameController gameController;
-	// Start is called before the first frame update
-	void Start()
+    public static LifeSystem vida;
+    [SerializeField] Animator[] lifeAni;
+    // Start is called before the first frame update
+    void Start()
     {
-        
+        vida = this;
     }
 
     // Update is called once per frame
@@ -34,13 +36,19 @@ public class LifeSystem : MonoBehaviour
 
         for (int i = 0; i < coracao.Length; i++)
         {
+            
             if(i < life)
             {
+                
                 coracao[i].sprite = cheio;
+                lifeAni[i].SetBool("isDead", false);
+
             }
             else
             {
+                lifeAni[i].SetBool("isDead", true);
                 coracao[i].sprite = vazio;
+                
             }
 
             if(i < lifeMax)
@@ -58,10 +66,13 @@ public class LifeSystem : MonoBehaviour
     {
         if(life <=0)
         {
+            
             GetComponent<Player>().enabled = false;
 			PlayerDeath.instance.ShowGameOver();
-			
             
+
+
         }
     }
+
 }

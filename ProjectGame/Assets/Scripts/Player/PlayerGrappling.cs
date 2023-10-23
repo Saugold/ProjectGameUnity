@@ -19,10 +19,12 @@ public class PlayerGrappling : MonoBehaviour
 	public	Vector2 agarrar;
 	private Vector2 posicao;
 	private Vector2 resetPosicao;
+	public static PlayerGrappling playerGrap;
 	
 
 	void Start()
 	{
+		playerGrap = this;
 		resetPosicao = grap.connectedAnchor;
 		line.enabled = false;
 	}

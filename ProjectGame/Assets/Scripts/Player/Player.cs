@@ -29,17 +29,18 @@ public class Player : MonoBehaviour
 	private float movimentoHorizontal;
 	private SpriteRenderer sprite;
 	CapsuleCollider2D playerCollider;
-	bool isjumping = false;
+	public bool isjumping = false;
 
 	public float kbForce;
 	public float kbCount;
 	public float kbTime;
 	public bool isKnockRight;
+	public static Player playerRef;
 
 
 	private void Awake()
 	{
-
+		playerRef = this;
 		playerRigidBody = GetComponent<Rigidbody2D>();
 		sprite = GetComponent<SpriteRenderer>();
 		playerCollider = GetComponent<CapsuleCollider2D>();
@@ -168,7 +169,7 @@ public class Player : MonoBehaviour
 	}
 		
 
-		 bool IsOnGround()
+		 public bool IsOnGround()
 		{
 			return playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
 			

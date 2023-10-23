@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class EnemyAtack : MonoBehaviour
 {
-	public Rigidbody2D enemyRig;
+    public EnemyPatDamage enemyda;
+    public Rigidbody2D enemyRig;
 	public LifeSystem Life;
 	// Start is called before the first frame update
 	void Start()
@@ -22,10 +23,15 @@ public class EnemyAtack : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			Life.life--;
-			Debug.Log("Voutemamar");
-			EnemyPatrulheiro.enemyPat.speed = 0;
-			StartCoroutine(PararMovimento());
+			if (enemyda.heigh < 0)
+			{
+				Life.life--;
+                GameController.instance.TomarDano();
+                Debug.Log("Voutemamar");
+                EnemyPatrulheiro.enemyPat.speed = 0;
+                StartCoroutine(PararMovimento());
+            }
+			
 			
 		}
 		

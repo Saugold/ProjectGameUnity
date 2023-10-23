@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class PlayerCombat : MonoBehaviour
 {
-    [SerializeField]private Rigidbody2D playerRig;
-    [SerializeField]private Collider2D playerCol;
+    [SerializeField] private Rigidbody2D playerRig;
+    [SerializeField] private Collider2D playerCol;
+    [SerializeField] public SpriteRenderer playerSprite;
     public bool pulou = false;
     public int playerLife;
+    public LifeSystem Life;
     public Player player;
     
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +28,23 @@ public class PlayerCombat : MonoBehaviour
         Pulo();
     }
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	private void OnCollisionEnter2D(Collision2D col)
 	{
-		if(collision.gameObject.tag =="Damage" && pulou != true)
+        if (col.gameObject.tag =="Damage"  )
         {
-            StartCoroutine(PlayerDamage(collision));
-			playerLife--; 
+            Debug.Log("Encostou no safado");
+            
+            TomarDano();
+            
+            StartCoroutine(PlayerDamage(col));
+			 
         }
 	}
+
     
     public IEnumerator PlayerDamage(Collision2D collision)
     {
-		player.kbCount = player.kbTime;
+        player.kbCount = player.kbTime;
 		if (collision.transform.position.x <= transform.position.x)
 		{
 			player.isKnockRight = false;
@@ -42,7 +53,7 @@ public class PlayerCombat : MonoBehaviour
 		{
 			player.isKnockRight = true;
 		}
-		playerLife--;
+		
 		yield return new WaitForSeconds(1.5f);
 
 	}
@@ -73,4 +84,9 @@ public class PlayerCombat : MonoBehaviour
 			pulou = false;
 		}
 	}
+    public void TomarDano()
+    {
+       
+    }
+    
 }
