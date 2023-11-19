@@ -64,7 +64,7 @@ public class PlayerGrappling : MonoBehaviour
 		{
 			if(!IsOnGround())
 			{
-				onArea = true;
+				this.onArea = true;
 			}
 			posicao = other.transform.position;
 		}
@@ -73,8 +73,10 @@ public class PlayerGrappling : MonoBehaviour
 	{
 		if (other.CompareTag("GrappleObject"))
 		{
-			onArea = false;
+			this.onArea = false;
+
 		}
+		
 	}
 	bool IsOnGround()
 	{
@@ -104,7 +106,8 @@ public class PlayerGrappling : MonoBehaviour
 				// Encerra o agarrar quando o botão é solto
 				isGrap = false;
 				grap.enabled = false;
-				grap.connectedAnchor = resetPosicao;
+                alvo = null;
+                grap.connectedAnchor = resetPosicao;
 
 				if (Input.GetKey("d"))
 				{

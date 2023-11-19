@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class PlayerDeath : MonoBehaviour
     public Collider2D playerCol;
     public Rigidbody2D playerRig;
     public static PlayerDeath instance;
+    public bool playerDeath;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,9 @@ public class PlayerDeath : MonoBehaviour
         
     }
 	public void ShowGameOver()
-	{   
+	{
+        Timer.time.marcarTempo();
+        playerDeath = true;
         playerRig.constraints = playerRig.constraints = RigidbodyConstraints2D.FreezePosition;
 		playerCol.enabled = false;
         
@@ -33,5 +36,12 @@ public class PlayerDeath : MonoBehaviour
     public void RestartGame(string lvlName)
     {
         SceneManager.LoadScene(lvlName);
+        if(lvlName == "Level_test 1")
+        {
+            
+            
+            
+
+        }
     }
 }

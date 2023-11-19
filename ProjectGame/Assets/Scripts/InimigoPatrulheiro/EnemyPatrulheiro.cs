@@ -7,9 +7,8 @@ public class EnemyPatrulheiro : MonoBehaviour
 {
     public float speed;
     public float distancia;
-
-    public bool isRight = false;
-	
+	public bool isDead = false;
+    public bool isRight = true;
 	public Transform groundCheck;
 	public Transform wallCheck;
 	public GameObject head;
@@ -21,14 +20,19 @@ public class EnemyPatrulheiro : MonoBehaviour
 	void Start()
     {
 		enemyPat = this;
+		enemyRig = this.GetComponent<Rigidbody2D>();
+		enemyCol = this.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-		if(enemyHit.hit != true)
+		if (this.isDead == false)
 		{
 			Moviment();
+		}
+		if (this.isDead == true) {
+			this.speed = 0;
 		}
 		
     }
@@ -42,12 +46,12 @@ public class EnemyPatrulheiro : MonoBehaviour
 		{
 			if (isRight == true)
 			{
-				transform.eulerAngles = new Vector3(0, 0, 0);
+				transform.eulerAngles = new Vector3(0, 180, 0);
 				isRight = false;
 			}
 			else
 			{
-				transform.eulerAngles = new Vector3(0, 180, 0);
+				transform.eulerAngles = new Vector3(0, 0, 0);
 				isRight = true;
 			}
 		}
@@ -57,31 +61,31 @@ public class EnemyPatrulheiro : MonoBehaviour
 	{
 		if(collider.gameObject.CompareTag("Ground"))
 		{
-			if (isRight == true)
-			{
-				transform.eulerAngles = new Vector3(0, 0, 0);
-				isRight = false;
-			}
-			else
-			{
-				transform.eulerAngles = new Vector3(0, 180, 0);
-				isRight = true;
-			}
-		}
-		else if(collider.gameObject.CompareTag("Damage"))
-		{
-			
-            if (isRight == false)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                isRight = true;
-            }
-            else
+            if (isRight == true)
             {
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 isRight = false;
             }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                isRight = true;
+            }
         }
+		else if (collider.gameObject.CompareTag("Damage"))
+		{
+            if (isRight == true)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                isRight = false;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                isRight = true;
+            }
+        }
+		
 	}
 	private void OnTriggerEnter2D(Collider2D collider)
 	{

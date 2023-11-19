@@ -11,7 +11,7 @@ public class EnemyAtack : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        
+        Life = Player.playerRef.GetComponent<LifeSystem>();
     }
 
     // Update is called once per frame

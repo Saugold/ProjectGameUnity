@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3366032038610500574
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3048037311499758849, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_text
+      value: Joanna
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037311802587063, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Name
+      value: Joanna
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037311802587063, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037311802587065, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.52287287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037311802587065, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.71571916
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037311802587065, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037313095736096, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037313095736096, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 23.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048037313095736099, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a09cd172451eb3a43a4104f0854a8226, type: 3}
+    - target: {fileID: 8996550897503997645, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Name
+      value: Joanna Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897503997645, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.25247
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 90.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0061610807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734944, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734945, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ecf08601439283744966b7c525edd85f, type: 3}
+    - target: {fileID: 8996550897848734946, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Name
+      value: NPC_Joanna
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: dc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 21300000, guid: a09cd172451eb3a43a4104f0854a8226, type: 3}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: actorName
+      value: Joanna
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: speechText.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: speechText.Array.data[0]
+      value: "Ol\xE1, pequenino... o que faz por aqui?Esta caverna n\xE3o \xE9 um
+        lugar para pessoas fr\xE1geis, como eu..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: speechText.Array.data[1]
+      value: Eu estava com minha parceira, mas acabamos nos separando.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: speechText.Array.data[2]
+      value: " T\xF4 com medo de passar por essas rochas, parece que v\xE3o cair
+        a qualquer momento."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550897848734975, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: speechText.Array.data[3]
+      value: "Vou ficar aqui. Se cruzar com minha amiga, avisa que t\xF4 aqui, beleza?
+        Valeu, pequenino."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550899033801836, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550899033801836, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550899033801836, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550899033801836, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550899033801839, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_Name
+      value: Joanna Dialog Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996550899033801839, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+--- !u!1 &5939305825377496892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8996550897848734946, guid: 763f48646b04fd2459164aa2cccd684e, type: 3}
+  m_PrefabInstance: {fileID: 3366032038610500574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5795871849184207652
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939305825377496892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e8e08052b39c614cb05de199aa5a9cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

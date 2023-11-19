@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 	public float velocidadeRapida = 10f;
 	private bool canDash = true;//pode dar Dash
 	private bool isDashing;
+	public ParticleSystem poeira;
 	[SerializeField] private float dashingPower = 3f;
 	[SerializeField] private float dashingTime = 0.5f;
 	[SerializeField] private float dashingCooldown = 0.5f;
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
 	private int lifePlayer;
 	public bool dead = false;
 
-	private Rigidbody2D playerRigidBody;
+	public Rigidbody2D playerRigidBody;
 
 	private float movimentoHorizontal;
 	private SpriteRenderer sprite;
@@ -54,7 +55,11 @@ public class Player : MonoBehaviour
 		//Jump();
 	}
 
-
+	//Levantar poeira
+	private void CriarPoeira()
+	{
+		poeira.Play();
+	}
 	private void PlayerMove()
 	{
 		// Obter entrada horizontal (eixo X) do jogador
@@ -62,8 +67,8 @@ public class Player : MonoBehaviour
 
 		// Definir velocidade atual com base na tecla Shift
 		float velocidadeAtual = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) ? velocidadeRapida : velocidadeNormal;
-
-
+		
+		
 		// Atualizar o Animator para executar a animação correta
 		//animator.SetBool("isWalking", Mathf.Abs(movimentoHorizontal) > 0);
 		//animator.SetBool("isRunning", Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
@@ -73,16 +78,24 @@ public class Player : MonoBehaviour
 		transform.position += movimento * velocidadeAtual * Time.deltaTime;
 		if (flipX == false && movimentoHorizontal < 0)
 		{
-			Flip(); //inverte a sprite
+			
+
+            Flip(); //inverte a sprite
 		}
 		else if (flipX == true && movimentoHorizontal > 0)
 		{
-			Flip();
+           
+            Flip();
 		}
 	}
 	private void Flip()
 	{
-		flipX = !flipX;
+		if(IsOnGround())
+		{
+            CriarPoeira();
+        }
+        
+        flipX = !flipX;
 		float x = transform.localScale.x;
 		x *= -1;
 		transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
@@ -128,8 +141,8 @@ public class Player : MonoBehaviour
 	{
 		if (canDash == true)
 		{
-
-			StartCoroutine(Dash());
+            CriarPoeira();
+            StartCoroutine(Dash());
 			if (value.isPressed)
 			{
 				//animator.SetTrigger("isDashing");
@@ -161,7 +174,8 @@ public class Player : MonoBehaviour
 		}
 		if (value.isPressed)
 		{
-			playerRigidBody.velocity += new Vector2(0f, jumpForce);
+            CriarPoeira();
+            playerRigidBody.velocity += new Vector2(0f, jumpForce);
 
 			isjumping = true;
 			
@@ -180,14 +194,14 @@ public class Player : MonoBehaviour
 
 			canDash = false;
 			isDashing = true;
-			/*if (isDashing == true)
-			{
-				animator.SetBool("isDashing", true);
-				animator.SetBool("isDashing", false);
-			}*/
+        /*if (isDashing == true)
+        {
+            animator.SetBool("isDashing", true);
+            animator.SetBool("isDashing", false);
+        }*/
 
 
-
+			
 			float valorGravidade = playerRigidBody.gravityScale;
 			playerRigidBody.gravityScale = 0f;
 			playerRigidBody.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);

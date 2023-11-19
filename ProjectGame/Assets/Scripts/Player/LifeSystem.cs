@@ -13,13 +13,13 @@ public class LifeSystem : MonoBehaviour
     public Sprite vazio;
     public GameController gameController;
     public static LifeSystem vida;
-    [SerializeField] Animator[] lifeAni;
+    public Animator[] lifeAni;
     // Start is called before the first frame update
     void Start()
     {
         vida = this;
     }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +27,7 @@ public class LifeSystem : MonoBehaviour
         Death();
 	}
 
-    void LifeLogic()
+    public void LifeLogic()
     {
         if(life > lifeMax)
         {
@@ -41,6 +41,7 @@ public class LifeSystem : MonoBehaviour
             {
                 
                 coracao[i].sprite = cheio;
+                
                 lifeAni[i].SetBool("isDead", false);
 
             }

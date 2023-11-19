@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyFollowCombat : MonoBehaviour
 {
-    public Rigidbody2D enemyRig;
+    private Rigidbody2D enemyRig;
     public LifeSystem Life;
     public static EnemyFollowCombat enemyFolCombat;
+    public EnemyFollow enemyfol;
     [SerializeField] private BoxCollider2D enemyHead;
     [SerializeField] GameObject enemy;
     [SerializeField] Rigidbody2D playerBody;
@@ -14,8 +15,10 @@ public class EnemyFollowCombat : MonoBehaviour
     public bool damage = false;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        enemyRig = GetComponent<Rigidbody2D>();
+        enemyfol = GetComponent<EnemyFollow>();
         enemyFolCombat = this;
     }
 
@@ -52,16 +55,17 @@ public class EnemyFollowCombat : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            damage = true;
-            EnemyFollow.enemyFollow.speed = 0;
+            this.enemyHead.enabled = false;
+            this.damage = true;
+            enemyfol.speed = 0;
             playerBody.velocity += new Vector2(0f, 10f);
+            Score.score.ScoreUpdate(5);
             StartCoroutine(EnemyDead());
         }
     }
     IEnumerator EnemyDead()
     {
-
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.enemy);
 
 

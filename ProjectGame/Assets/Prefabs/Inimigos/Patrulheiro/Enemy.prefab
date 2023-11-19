@@ -62,7 +62,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   distancia: 3
+  isDead: 0
   isRight: 0
   groundCheck: {fileID: 7190098551739558465}
   wallCheck: {fileID: 0}
@@ -206,8 +207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCol: {fileID: 7190098551405522976}
+  enemyColhead: {fileID: 0}
   enemy: {fileID: 7190098551405523035}
   headPoint: {fileID: 7190098551460037580}
+  enemyDead: {fileID: 0}
+  enemyRig: {fileID: 0}
   heigh: 0
 --- !u!1 &7190098551460037581
 GameObject:
@@ -254,8 +258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCol: {fileID: 0}
+  enemyColhead: {fileID: 0}
   enemy: {fileID: 7190098551405523035}
   headPoint: {fileID: 0}
+  enemyDead: {fileID: 0}
+  enemyRig: {fileID: 0}
   heigh: 0
 --- !u!1 &7190098551739558470
 GameObject:

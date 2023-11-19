@@ -9,6 +9,7 @@ TagManager:
   - Damage
   - EnemyHead
   - Wall
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Background
   - Player
   - Wall
-  - 
+  - NPC
   - 
   - 
   - 
@@ -54,4 +55,10 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 4269548603
+    locked: 0
+  - name: NPC
+    uniqueID: 4006403317
+    locked: 0
+  - name: Player
+    uniqueID: 1817703755
     locked: 0

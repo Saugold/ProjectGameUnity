@@ -9,13 +9,18 @@ public class CogumeloAnimController : MonoBehaviour
     [SerializeField] private Animator cogAnim;
     [SerializeField] private Collider2D cogCol;
     [SerializeField] private Transform headPoint;
-   
+    public EnemyPatrulheiro enemyPat;
     public float heigh;
 
     // Update is called once per frame
+    private void Awake()
+    {
+        enemyPat = this.GetComponent<EnemyPatrulheiro>();
+    }
     void Update()
     {
-        if (EnemyPatrulheiro.enemyPat.speed > 0)
+        
+        if (enemyPat.speed > 0)
             cogAnim.SetBool("isRun", true);
         else
             cogAnim.SetBool("isRun", false);
